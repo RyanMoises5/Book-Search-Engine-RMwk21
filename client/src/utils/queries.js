@@ -2,11 +2,10 @@ import { gql } from '@apollo/client';
 
 // Incomplete - Needs to be implemented in SavedBooks.jsx
 export const QUERY_ME = gql`
-  query me ($userId: ID!) {
-    user(id: $userId) {
+  query me {
+    me {
       _id
       username
-      email
     }
   }
 `;

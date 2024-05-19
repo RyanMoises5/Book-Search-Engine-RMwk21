@@ -25,16 +25,6 @@ export const CREATE_USER = gql`
   }
 `;
 
-// export const createUser = (userData) => {
-//   return fetch('/api/users', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(userData),
-//   });
-// };
-
 // // save book data for a logged in user
 // export const saveBook = (bookData, token) => {
 //   return fetch('/api/users', {
