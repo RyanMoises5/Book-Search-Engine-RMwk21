@@ -12,15 +12,18 @@ export const LOGIN_USER = gql`
   }
 `;
 
-// export const loginUser = (userData) => {
-//   return fetch('/api/users/login', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(userData),
-//   });
-// };
+export const CREATE_USER = gql`
+  mutation createUser($username: String!, $email: String!, $password: String!) {
+    createUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+        email
+      }
+    }
+  }
+`;
 
 // export const createUser = (userData) => {
 //   return fetch('/api/users', {

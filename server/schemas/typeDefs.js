@@ -28,12 +28,11 @@ const typeDefs = `
 
   type Mutation {
     login(email: String!, password: String!): Auth
+    createUser(username: String! email: String!, password: String!): Auth
   }
 `;
 
   // type Mutation {
-  //   addUser(): Auth
-  //   login(): Auth
   //   saveBook(): 
   //   deleteBook():
   // }
