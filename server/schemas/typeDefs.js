@@ -17,8 +17,17 @@ const typeDefs = `
     title: String!
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     user(id: ID!): User
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
   }
 `;
 
