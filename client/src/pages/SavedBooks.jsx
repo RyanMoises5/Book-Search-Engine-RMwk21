@@ -17,10 +17,8 @@ import { useQuery } from '@apollo/client';
 const SavedBooks = () => {
 
   const { loading, data } = useQuery(GET_ME);
-  console.log("Data:", data)
   
   const userData = data?.me || {};
-  console.log("userData:", userData)
 
   // data = {
   //   "me": {
