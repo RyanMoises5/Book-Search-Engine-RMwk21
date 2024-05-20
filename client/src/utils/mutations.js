@@ -25,6 +25,25 @@ export const CREATE_USER = gql`
   }
 `;
 
+export const SAVE_BOOK = gql`
+  mutation saveBook($authors: [String]!, $description: String!, $title: String!, $bookId: String!) {
+    saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId) {
+      _id
+      username
+      email
+      savedBooks {
+        _id
+        authors
+        bookId
+        description
+        image
+        link
+        title
+      }
+    }
+  }
+`;
+
 // // save book data for a logged in user
 // export const saveBook = (bookData, token) => {
 //   return fetch('/api/users', {

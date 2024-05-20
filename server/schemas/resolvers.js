@@ -7,7 +7,6 @@ const resolvers = {
       return User.find({});
     },
     me: async (parent, args, context) => {
-      console.log("Context:", context.user)
       if (context.user) {
         return User.findOne({ _id: context.user._id });
         // .populate('savedBooks');
@@ -36,6 +35,21 @@ const resolvers = {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
+    },
+    saveBook: async (parent, args, context) => {
+      const user = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        {
+          $addToSet: {
+            savedBooks: {...args}
+          }
+        },
+        {
+          new: true,
+          runValidatorss: true
+        }
+      )
+      return user
     }
   }
 }

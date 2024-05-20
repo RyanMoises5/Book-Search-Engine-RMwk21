@@ -21,10 +21,6 @@ const SavedBooks = () => {
   
   const userData = data?.me || {};
   console.log("userData:", userData)
-  // const userData = data.me
-
-  // console.log("userData:", userData)
-
 
   // data = {
   //   "me": {
