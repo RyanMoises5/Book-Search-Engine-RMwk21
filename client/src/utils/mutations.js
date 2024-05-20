@@ -44,6 +44,25 @@ export const SAVE_BOOK = gql`
   } 
 `;
 
+export const REMOVE_BOOK = gql`
+  mutation saveBook($bookId: String!) {
+    removeBook(bookId: $bookId) {
+      _id
+      username
+      email
+      savedBooks {
+        _id
+        authors
+        bookId
+        description
+        image
+        link
+        title
+      }
+    }
+  }
+`;
+
 // // save book data for a logged in user
 // export const saveBook = (bookData, token) => {
 //   return fetch('/api/users', {
