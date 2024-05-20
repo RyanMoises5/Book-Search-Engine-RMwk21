@@ -1,13 +1,23 @@
 import { gql } from '@apollo/client';
 
 // Incomplete - Needs to be implemented in SavedBooks.jsx
-export const QUERY_ME = gql`
+export const GET_ME = gql`
   query me {
     me {
       _id
       username
+      email
+      savedBooks {
+        _id
+        bookId
+        title
+        authors
+        description
+        image
+        link
+      }
     }
-  }
+}
 `;
 
 // route to get logged in user's info (needs the token)
