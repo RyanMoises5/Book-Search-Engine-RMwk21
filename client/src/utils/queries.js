@@ -17,7 +17,7 @@ export const GET_ME = gql`
         link
       }
     }
-}
+  }
 `;
 
 // route to get logged in user's info (needs the token)

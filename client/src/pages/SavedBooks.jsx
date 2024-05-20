@@ -16,13 +16,25 @@ import { useQuery } from '@apollo/client';
 
 const SavedBooks = () => {
 
-  const userData = Auth.getProfile();
-  // const userID = userData.data._id;
-  // console.log(userID)
-
   const { loading, data } = useQuery(GET_ME);
+  console.log("Data:", data)
+  
+  const userData = data?.me || {};
+  console.log("userData:", userData)
+  // const userData = data.me
 
-  console.log("GET_ME:", data);
+  // console.log("userData:", userData)
+
+
+  // data = {
+  //   "me": {
+  //       "__typename": "User",
+  //       "_id": "6649537f3e03b45eea9902a0",
+  //       "username": "dummy5",
+  //       "email": "dummy5@dummy5.com",
+  //       "savedBooks": []
+  //   }
+  // }
 
 
 
@@ -62,31 +74,31 @@ const SavedBooks = () => {
   // }, [userDataLength]);
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
-  const handleDeleteBook = async (bookId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
+  // const handleDeleteBook = async (bookId) => {
+  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    if (!token) {
-      return false;
-    }
+  //   if (!token) {
+  //     return false;
+  //   }
 
-    try {
-      const response = await deleteBook(bookId, token);
+  //   try {
+  //     const response = await deleteBook(bookId, token);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+  //     if (!response.ok) {
+  //       throw new Error('something went wrong!');
+  //     }
 
-      const updatedUser = await response.json();
-      setUserData(updatedUser);
-      // upon success, remove book's id from localStorage
-      removeBookId(bookId);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     const updatedUser = await response.json();
+  //     setUserData(updatedUser);
+  //     // upon success, remove book's id from localStorage
+  //     removeBookId(bookId);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   // if data isn't here yet, say so
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 

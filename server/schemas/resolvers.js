@@ -7,7 +7,7 @@ const resolvers = {
       return User.find({});
     },
     me: async (parent, args, context) => {
-      console.log("Context:", context)
+      console.log("Context:", context.user)
       if (context.user) {
         return User.findOne({ _id: context.user._id });
         // .populate('savedBooks');
