@@ -1,4 +1,4 @@
-# 20 React Challenge: React Portfolio Completion
+# 21 MERN Challenge: Book Search Engine
 
 Student: Ryan Moises
 
@@ -57,13 +57,13 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 The following link is the student's deployed app hosted on Render:
 
-(https://pwa-text-editor-rmwk19.onrender.com/)
+(https://book-search-engine-rmwk21.onrender.com)
 
 The following link is the GitHub repository where the associated files are located:
 
-(https://github.com/RyanMoises5/PWA-Text-Editor-RMwk19)
+(https://github.com/RyanMoises5/Book-Search-Engine-RMwk21)
 
-![JPG of the working JATE app](./assets/sample.JPG)
+![JPG of the front page of the Google Books search engine app](./assets/sample.JPG)
 
 ---
 
