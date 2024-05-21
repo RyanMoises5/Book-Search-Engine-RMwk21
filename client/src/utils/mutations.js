@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+// Graphql commands to login, create a user, save and remove a book from a user
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {

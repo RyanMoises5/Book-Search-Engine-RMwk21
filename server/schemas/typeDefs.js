@@ -1,3 +1,7 @@
+// Schemas to allow access to data when data is fetched from database
+
+// Queries and Mutations are allowed commands that the resolver will then use to fetch the appropriate data
+
 const typeDefs = `
   type User {
     _id: ID!

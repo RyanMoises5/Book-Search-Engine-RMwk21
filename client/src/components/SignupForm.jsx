@@ -13,6 +13,7 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
+  // Mutation to create a new user
   const [createUser] = useMutation(CREATE_USER);
 
   const handleInputChange = (event) => {
@@ -31,11 +32,11 @@ const SignupForm = () => {
     }
 
     try {
-      console.log(userFormData)
+      // Changed code to fetch data with GraphQL instead of API
       const { data } = await createUser({
         variables: { ...userFormData },
       })
-      console.log("Data", data)
+
       Auth.login(data.createUser.token)
 
     } catch (err) {

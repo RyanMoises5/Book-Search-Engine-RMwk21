@@ -32,6 +32,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(), 
 });
 
+// Apollo Provider wraps around app to allow token use in the header and graphql functionality
+
 function App() {
   return (
     <ApolloProvider client={client}>

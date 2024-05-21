@@ -11,6 +11,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const { expressMiddleware } = require('@apollo/server/express4')
 
 
+// Graphql will utilize apollo server and replace the controller routes with typeDefs and resolvers
 const server = new ApolloServer({
   typeDefs,
   resolvers
@@ -22,6 +23,8 @@ const startApolloServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
+  // Client fetches will parse through Apollo Server
+  // Context is used to pass token data through client header
   app.use('/graphql', expressMiddleware(server, {
     context: authMiddleware
   }));

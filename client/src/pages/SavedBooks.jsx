@@ -15,10 +15,12 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
 
+  // Replaced useEffect with a useQuery when SavedBooks is called
   const { loading, data } = useQuery(GET_ME);
 
   let userData = data?.me || {};
 
+  // Mutation to remove book from user
   const [deleteBook] = useMutation(REMOVE_BOOK);
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
@@ -30,6 +32,8 @@ const SavedBooks = () => {
     }
 
     try {
+
+      // Changed code to fetch data with GraphQL instead of API
       const { updatedUser } = await deleteBook({
         variables: {
           bookId: bookId
