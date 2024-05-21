@@ -6,11 +6,11 @@ import { CREATE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
-  // set initial form state
+  // Initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-  // set state for form validation
+  // State for form validation
   const [validated] = useState(false);
-  // set state for alert
+  // State for alert
   const [showAlert, setShowAlert] = useState(false);
 
   // Mutation to create a new user
